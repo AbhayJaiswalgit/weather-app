@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #83a4d4, #b6fbff);
+  min-height: 100vh;
+  padding: 1.5rem 2rem; 
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  padding: 2.5rem 3rem; 
+  transition: all 0.3s ease-in-out;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  animation: fadeInDown 1s ease-out;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+
+.header h1 {
+  font-weight: 700;
+  color: #0077b6;
+  font-size: 2.25rem;
+  letter-spacing: 1.2px;
+}
+
+.header p {
+  color: #495057;
+  font-weight: 500;
+  font-size: 1.1rem;
+  max-width: 350px;
+}
+
+/* INPUT */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.input-box {
+  flex: 1 1 auto;
+  min-width: 180px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: 1.5px solid #bbb;
+  transition: border 0.3s ease;
+  font-size: 1rem;
+  color: #333;
+}
+
+.input-box:focus {
+  border: 1.5px solid #0077b6;
+  outline: none;
+  box-shadow: 0 0 8px #0077b6aa;
+}
+
+.btn-info {
+  background-color: #00b4d8;
+  border: none;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 0px #00b4d8aa;
+}
+
+.btn-info:hover {
+  background-color: #0077b6;
+  box-shadow: 0 6px 10px #0077b6cc;
+}
+
+/* IMAGE HOME */
+.image-container {
+  width: 100%;
+  height: 420px; 
+  background-image: url('./gallery/weather1.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.2rem;
+  position: relative;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2.5rem;
+}
+
+/* CURRENT WEATHER */
+.curr-weather-container {
+  margin-top: 2.5rem;
+  animation: fadeIn 1s ease;
+}
+
+.gap-condition{
+  margin:1.8rem 0rem;
+}
+
+.curr-weather {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+  background-color: #caf0f8;
+  border-radius: 1.2rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: #0077b6;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* AIR CONDITIONS */
+.air-conditions-container {
+  margin-top: 2.5rem;
+  animation: fadeIn 1.2s ease;
+}
+
+.air-conditions-text,
+.air-conditions-value {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+  margin: 0.6rem 0;
+  color: #495057;
+  font-weight: 500;
+}
+
+.air-conditions-value p,
+.air-conditions-text p {
+  width: 130px;
+  text-align: center;
+  background: #e0f7fa;
+  padding: 0.6rem 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px #00b4d840;
+}
+
+/* WEEKLY FORECAST */
+.weekly-forecast-container {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: fadeInUp 1s ease;
+}
+
+.each-day-forecast-container {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 1.25rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  color: #0077b6;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.each-day-forecast-container:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background-color: #e0f7fa;
+}
+
+.each-day-forecast-container-1,
+.each-day-forecast-container-2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  .curr-weather,
+  .air-conditions-text,
+  .air-conditions-value {
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    overflow-x: auto;
+  }
+
+  .input-container {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    overflow-x: auto;
+  }
+
+  .each-day-forecast-container-1,
+  .each-day-forecast-container-2 {
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    overflow-x: auto;
+  }
+
+  .header {
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Header from "./components/header";
+import Header from "./components/Header";
 import LocationInput from "./components/LocationInput";
 import Home from "./components/Home";
 import CurrentWeather from "./components/CurrentWeather";
